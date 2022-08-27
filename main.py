@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_echarts import st_echarts
 
 st.title("Opa Tudo Bom!")
 
@@ -14,4 +15,4 @@ options = {
     "yAxis": {"type": "value"},
     "series": [{"data": [120, 200, 150, 80, 70, 110, 130], "type": "bar"}],
 }
-st.echarts(options=options, height="500px")
+st_echarts(options=options, height="500px")
