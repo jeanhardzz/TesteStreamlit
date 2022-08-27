@@ -14,4 +14,4 @@ options = {
     "yAxis": {"type": "value"},
     "series": [{"data": [120, 200, 150, 80, 70, 110, 130], "type": "bar"}],
 }
-st_echarts(options=options, height="500px")
+st.echarts(options=options, height="500px")
