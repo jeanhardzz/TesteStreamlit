@@ -11,29 +11,6 @@ import numpy as np
 
 st.title("Opa Tudo Bom!")
 
-"""
-<!--
-/*
-bro = st.selectbox("Selecione um bro",["pablin","bias","felope","pedron","jubplay","vitao"])
-
-st.sidebar.title("Menu")
-
-options = {
-    "xAxis": {
-        "type": "category",
-        "data": [bro, bro, bro, bro, bro, bro, bro],
-    },
-    "yAxis": {"type": "value"},
-    "series": [{"data": [120, 200, 150, 80, 70, 110, 130], "type": "bar"}],
-}
-
-fig=st_echarts(options=options, height="500px")
-
-st.write(fig)
-
-*/
--->
-"""
 
 g=net.Network(directed =True, height='400px', width='50%',heading='')
 g.add_node(1,label='a')
