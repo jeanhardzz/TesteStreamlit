@@ -71,6 +71,16 @@ def AfdStringMatching():
     A="abc"
     d = ComputeTransitionFunction(P,A)
     st.write(d)
+    g=net.Network(directed =True, height='400px', width='50%',heading='')
+    
+    g.add_node(1,label='a')
+    g.add_node(2,label='b')
+    g.add_node(3,label='c')
+    g.add_edge(1,2,label='1')
+    g.add_edge(1,2,label='1')
+    g.add_edge(1,2,label='1')
+    g.add_edge(2,3,label='1')
+    g.save_graph('example.html')
    
 AfdStringMatching()
 
