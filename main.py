@@ -52,7 +52,7 @@ def ComputeTransitionFunction(P,A):
 
 def AfdStringMatching(P,A):    
     d = ComputeTransitionFunction(P,A)    
-    g=net.Network(directed =True, height='300px', width='80%',heading='')
+    g=net.Network(directed =True, height='400px', width='90%',heading='')
     
     g.add_node(0,label="vazio")
     for i in range(0,len(d)-1,1):        
@@ -73,6 +73,7 @@ def AfdStringMatching(P,A):
    
 
 P="aba"
+P=st.text_input(label, value="", max_chars=None, key=None, type="default")
 A="abcdefghijklmnopqrstuvwxyz"
 
 AfdStringMatching(P,A)
