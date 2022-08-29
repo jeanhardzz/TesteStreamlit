@@ -38,7 +38,7 @@ g.save_graph('example.html')
 
 HtmlFile = open("example.html", 'r', encoding='utf-8')
 source_code = HtmlFile.read() 
-components.html(source_code, height = 450,width=450)
+components.html(source_code, height = 450,width=900)
 #display(HTML('example.html'))
 
 def Sufixo(pk,pqa):
