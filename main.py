@@ -10,20 +10,7 @@ import streamlit.components.v1 as components
 import numpy as np
 
 st.title("Opa Tudo Bom!")
-
-
-g=net.Network(directed =True, height='400px', width='50%',heading='')
-g.add_node(1,label='a')
-g.add_node(2,label='b')
-g.add_node(3,label='c')
-g.add_edge(1,2,label='1')
-g.add_edge(2,3,label='1')
-g.save_graph('example.html')
-
-HtmlFile = open("example.html", 'r', encoding='utf-8')
-source_code = HtmlFile.read() 
-components.html(source_code, height = 450,width=900)
-#display(HTML('example.html'))
+st.write('Digite uma palavra que irei consstruir um autômato finido não deterministico para voce :)')
 
 def Sufixo(pk,pqa):
   m = len(pk)
