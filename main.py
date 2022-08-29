@@ -72,8 +72,8 @@ def AfdStringMatching(P,A):
     components.html(source_code, height = 450,width=900)
    
 
-P="aba"
-P=st.text_input(label, value="", max_chars=None, key=None, type="default")
+
+P = st.text_input('padrao', 'abc')
 A="abcdefghijklmnopqrstuvwxyz"
 
 AfdStringMatching(P,A)
