@@ -11,6 +11,7 @@ import numpy as np
 
 st.title("Opa Tudo Bom!")
 
+"""
 bro = st.selectbox("Selecione um bro",["pablin","bias","felope","pedron","jubplay","vitao"])
 
 st.sidebar.title("Menu")
@@ -27,6 +28,8 @@ options = {
 fig=st_echarts(options=options, height="500px")
 
 st.write(fig)
+
+"""
 
 g=net.Network(directed =True, height='400px', width='50%',heading='')
 g.add_node(1,label='a')
