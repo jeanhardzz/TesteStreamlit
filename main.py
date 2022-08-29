@@ -50,29 +50,30 @@ def ComputeTransitionFunction(P,A):
       
   return delta
 
-def AfdStringMatching():
-    P="aba"
-    A="abc"
-    d = ComputeTransitionFunction(P,A)
-    st.write(d)
-    g=net.Network(directed =True, height='400px', width='50%',heading='')
+def AfdStringMatching(P,A):    
+    d = ComputeTransitionFunction(P,A)    
+    g=net.Network(directed =True, height='300px', width='80%',heading='')
+    
+    g.add_node(0,label="vazio")
+    for i in range(0,len(d)-1,1):        
+        g.add_node(i+1,label=P[i])
     
     for i in range(len(d)):
-        g.add_node(i,label=A[i-1])
+        for j in range(len(d[i])):          
+          if(i != int(d[i][j])):
+            if(int(d[i][j]) != 0):
+              g.add_edge(i,int(d[i][j]),label=A[j])
+            
     
-    for i in range(len(d)):
-        for j in range(len(d[i])):
-            print(d[i][j])
-    
-    g.add_edge(1,2,label='1')
-    g.add_edge(1,2,label='1')
-    g.add_edge(1,2,label='1')
-    g.add_edge(2,3,label='1')
-    g.save_graph('afd.html')
+    g.show('afd.html') 
     
     HtmlFile = open("afd.html", 'r', encoding='utf-8')
     source_code = HtmlFile.read() 
     components.html(source_code, height = 450,width=900)
    
-AfdStringMatching()
+
+P="aba"
+A="abcdefghijklmnopqrstuvwxyz"
+
+AfdStringMatching(P,A)
 
