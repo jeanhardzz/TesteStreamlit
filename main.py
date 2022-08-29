@@ -80,7 +80,11 @@ def AfdStringMatching():
     g.add_edge(1,2,label='1')
     g.add_edge(1,2,label='1')
     g.add_edge(2,3,label='1')
-    g.save_graph('example.html')
+    g.save_graph('afd.html')
+    
+    HtmlFile = open("afd.html", 'r', encoding='utf-8')
+    source_code = HtmlFile.read() 
+    components.html(source_code, height = 450,width=900)
    
 AfdStringMatching()
 
