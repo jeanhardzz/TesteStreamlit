@@ -1,19 +1,43 @@
+#pip freeze > requirements.txt
 import streamlit as st
 
 from streamlit_echarts import st_echarts
 
+from pyvis import network as net
+from IPython.core.display import display, HTML
+import streamlit.components.v1 as components
+
 st.title("Opa Tudo Bom!")
 
-st.selectbox("Selecione um bro",["pablin","bias","felope","pedron","jubplay","vitao"])
+bro = st.selectbox("Selecione um bro",["pablin","bias","felope","pedron","jubplay","vitao"])
 
 st.sidebar.title("Menu")
 
 options = {
     "xAxis": {
         "type": "category",
-        "data": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        "data": [bro, bro, bro, bro, bro, bro, bro],
     },
     "yAxis": {"type": "value"},
     "series": [{"data": [120, 200, 150, 80, 70, 110, 130], "type": "bar"}],
 }
-st_echarts(options=options, height="500px")
+
+fig=st_echarts(options=options, height="500px")
+
+st.write(fig)
+
+g=net.Network(height='400px', width='50%',heading='')
+g.add_node(1)
+g.add_node(2)
+g.add_node(3)
+g.add_edge(1,2)
+g.add_edge(2,3)
+g.save_graph('example.html')
+
+HtmlFile = open("example.html", 'r', encoding='utf-8')
+source_code = HtmlFile.read() 
+components.html(source_code, height = 900,width=900)
+#display(HTML('example.html'))
+
+
+
