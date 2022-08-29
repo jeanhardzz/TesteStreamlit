@@ -5,7 +5,7 @@ st.title("Opa Tudo Bom!")
 
 st.selectbox("Selecione um bro",["pablin","bias","felope","pedron","jubplay","vitao"])
 
-st.sidebar.title("Cuidado")
+st.sidebar.title("Menu")
 
 options = {
     "xAxis": {
