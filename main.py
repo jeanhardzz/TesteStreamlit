@@ -41,14 +41,17 @@ def AfdStringMatching(P,A):
     d = ComputeTransitionFunction(P,A)    
     g=net.Network(directed =True, height='400px', width='90%',heading='')
     
-    g.add_node(0,label="vazio")
+    g.add_node(0,label="vazio",color="#009c02")
     for i in range(0,len(d)-1,1):        
-        g.add_node(i+1,label=P[i])
+        if(i == len(d)-2):       
+          g.add_node(i+1,label=P[i],color="#ff0000")
+        else:
+          g.add_node(i+1,label=P[i])
     
     for i in range(len(d)):
         for j in range(len(d[i])):          
           if(i != int(d[i][j])):
-            if(int(d[i][j]) != 0):
+            if(int(d[i][j]) != 0):        
               g.add_edge(i,int(d[i][j]),label=A[j])
             
     
